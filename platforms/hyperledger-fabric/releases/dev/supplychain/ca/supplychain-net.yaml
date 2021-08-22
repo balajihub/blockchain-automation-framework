@@ -21,7 +21,7 @@ spec:
     metadata:
       namespace: supplychain-net
       images:
-        alpineutils: https://hub.docker.com/alpine-utils:1.0
+        alpineutils: registry.hub.docker.com/alpine-utils:1.0
         ca: hyperledger/fabric-ca:1.4.8
     server:
       name: ca
@@ -47,4 +47,4 @@ spec:
     proxy:
       provider: haproxy
       type: orderer
-      external_url_suffix: org1ambassador.blockchaincloudpoc.com
+      external_url_suffix: org1ambassador.fabrictest.hyperrnd.com
