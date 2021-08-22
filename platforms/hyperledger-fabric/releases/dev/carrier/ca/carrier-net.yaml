@@ -15,7 +15,7 @@ spec:
     metadata:
       namespace: carrier-net
       images:
-        alpineutils: https://hub.docker.com/alpine-utils:1.0
+        alpineutils: registry.hub.docker.com/alpine-utils:1.0
         ca: hyperledger/fabric-ca:1.4.8
     deployment:
       annotations:
@@ -48,4 +48,4 @@ spec:
     proxy:
       provider: haproxy
       type: peer
-      external_url_suffix: org3ambassador.blockchaincloudpoc.com
+      external_url_suffix: org3ambassador.fabrictest.hyperrnd.com
