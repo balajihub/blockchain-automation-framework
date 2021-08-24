@@ -15,7 +15,7 @@ spec:
     metadata:
       namespace: carrier-net
       images:
-        alpineutils: index.docker.io/alpine-utils:1.0
+        alpineutils: balajidockerurl/alpine-utils:1.0
         ca: hyperledger/fabric-ca:1.4.8
     deployment:
       annotations:
