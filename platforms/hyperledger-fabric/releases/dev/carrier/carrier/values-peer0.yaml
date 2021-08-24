@@ -4,7 +4,7 @@ metadata:
   name: carrier-peer0
   namespace: carrier-net
   annotations:
-    fluxcd.io/automated: "false"
+    fluxcd.io/automated: "true"
 spec:
   releaseName: carrier-peer0
   chart:
