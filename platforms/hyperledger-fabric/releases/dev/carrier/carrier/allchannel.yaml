@@ -40,7 +40,7 @@ spec:
     orderer:
       address: orderer1.fabrictest.hyperrnd.com:8443
     channeltx: |-
-      Cq8DChgKFggCGgYInruWiQYiCmFsbGNoYW5uZWwSkgMKjwMKCmFsbGNoYW5uZWwSMRIfCgtBcHBs
+      Cq8DChgKFggCGgYI59iWiQYiCmFsbGNoYW5uZWwSkgMKjwMKCmFsbGNoYW5uZWwSMRIfCgtBcHBs
       aWNhdGlvbhIQEg4KCmNhcnJpZXJNU1ASABoOCgpDb25zb3J0aXVtEgAazQISoQIKC0FwcGxpY2F0
       aW9uEpECCAESDgoKY2Fycmllck1TUBIAGiQKDENhcGFiaWxpdGllcxIUEgoKCAoEVjJfMBIAGgZB
       ZG1pbnMiIgoHV3JpdGVycxIXEg0IAxIJCgdXcml0ZXJzGgZBZG1pbnMiIgoGQWRtaW5zEhgSDggD
