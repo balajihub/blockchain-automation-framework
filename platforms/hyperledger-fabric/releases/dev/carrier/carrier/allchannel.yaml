@@ -40,11 +40,11 @@ spec:
     orderer:
       address: orderer1.fabrictest.hyperrnd.com:8443
     channeltx: |-
-      Cq8DChgKFggCGgYI7L2aiQYiCmFsbGNoYW5uZWwSkgMKjwMKCmFsbGNoYW5uZWwSMRIfCgtBcHBs
+      Cq8DChgKFggCGgYIr9GaiQYiCmFsbGNoYW5uZWwSkgMKjwMKCmFsbGNoYW5uZWwSMRIfCgtBcHBs
       aWNhdGlvbhIQEg4KCmNhcnJpZXJNU1ASABoOCgpDb25zb3J0aXVtEgAazQISoQIKC0FwcGxpY2F0
       aW9uEpECCAESDgoKY2Fycmllck1TUBIAGiQKDENhcGFiaWxpdGllcxIUEgoKCAoEVjJfMBIAGgZB
-      ZG1pbnMiIgoGQWRtaW5zEhgSDggDEgoKBkFkbWlucxACGgZBZG1pbnMiLAoLRW5kb3JzZW1lbnQS
-      HRITCAMSDwoLRW5kb3JzZW1lbnQQAhoGQWRtaW5zIjUKFExpZmVjeWNsZUVuZG9yc2VtZW50Eh0S
-      EwgDEg8KC0VuZG9yc2VtZW50EAIaBkFkbWlucyIiCgdSZWFkZXJzEhcSDQgDEgkKB1JlYWRlcnMa
-      BkFkbWlucyIiCgdXcml0ZXJzEhcSDQgDEgkKB1dyaXRlcnMaBkFkbWlucyoGQWRtaW5zGicKCkNv
+      ZG1pbnMiLAoLRW5kb3JzZW1lbnQSHRITCAMSDwoLRW5kb3JzZW1lbnQQAhoGQWRtaW5zIjUKFExp
+      ZmVjeWNsZUVuZG9yc2VtZW50Eh0SEwgDEg8KC0VuZG9yc2VtZW50EAIaBkFkbWlucyIiCgdSZWFk
+      ZXJzEhcSDQgDEgkKB1JlYWRlcnMaBkFkbWlucyIiCgdXcml0ZXJzEhcSDQgDEgkKB1dyaXRlcnMa
+      BkFkbWlucyIiCgZBZG1pbnMSGBIOCAMSCgoGQWRtaW5zEAIaBkFkbWlucyoGQWRtaW5zGicKCkNv
       bnNvcnRpdW0SGRIXChVTdXBwbHlDaGFpbkNvbnNvcnRpdW0=
