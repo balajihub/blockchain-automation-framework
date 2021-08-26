@@ -34,9 +34,9 @@ spec:
       role: vault-role
       address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com/
       authpath: dev1supplychain-net-auth
-      secretcert: vault7/crypto/ordererOrganizations/supplychain-net/ca?ca.supplychain-net-cert.pem
-      secretkey: vault7/crypto/ordererOrganizations/supplychain-net/ca?supplychain-net-CA.key
-      secretadminpass: vault7/credentials/supplychain-net/ca/supplychain?user
+      secretcert: vault71/crypto/ordererOrganizations/supplychain-net/ca?ca.supplychain-net-cert.pem
+      secretkey: vault71/crypto/ordererOrganizations/supplychain-net/ca?supplychain-net-CA.key
+      secretadminpass: vault71/credentials/supplychain-net/ca/supplychain?user
       serviceaccountname: vault-auth
       imagesecretname: regcred
     service:
