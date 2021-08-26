@@ -35,9 +35,9 @@ spec:
       role: vault-role
       address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com
       authpath: dev1carrier-net-auth
-      secretcert: vault71/crypto/peerOrganizations/carrier-net/ca?ca.carrier-net-cert.pem
-      secretkey: vault71/crypto/peerOrganizations/carrier-net/ca?carrier-net-CA.key
-      secretadminpass: vault71/credentials/carrier-net/ca/carrier?user
+      secretcert: vault72/crypto/peerOrganizations/carrier-net/ca?ca.carrier-net-cert.pem
+      secretkey: vault72/crypto/peerOrganizations/carrier-net/ca?carrier-net-CA.key
+      secretadminpass: vault72/credentials/carrier-net/ca/carrier?user
       serviceaccountname: vault-auth
       imagesecretname: regcred
     service:
