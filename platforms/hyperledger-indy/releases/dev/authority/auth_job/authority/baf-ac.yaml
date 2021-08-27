@@ -1,0 +1,36 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: authority-baf-ac-auth-job
+  annotations:
+    fluxcd.io/automated: "false"
+  namespace: authority-ns
+spec:
+  releaseName: authority-baf-ac-auth-job
+  chart:
+    path: platforms/hyperledger-indy/charts/indy-auth-job
+    git: https://github.com/<username>/blockchain-automation-framework.git
+    ref: main
+  values:
+    metadata:
+      name: authority-baf-ac-auth-job
+      namespace: authority-ns
+    network:
+      name: hrnd
+      kubernetes_url: https://B617DF6E3F02141218F27D4B6B2ED16D.gr7.us-east-2.eks.amazonaws.com
+    image:
+      name: authority
+      repository: alpine:3.9.4
+    vault:
+      address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com
+      keyPath: authority.baf-ac
+      identity: baf-ac
+      admin_auth_path: kubernetes-authority-admin-auth
+      policy: authority-baf-ac-ro
+      policy_content: path \"/authority/+/+/+/public*\" { capabilities = [ \"read\", \"list\" ] }
+      auth_path: kubernetes-authority-baf-ac-auth
+    account:
+      admin_service: authority-admin-vault-auth
+      admin_role: rw
+      service: authority-baf-ac-vault-auth
+      role: ro
