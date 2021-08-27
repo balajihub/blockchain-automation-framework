@@ -1,0 +1,31 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: authority-authority-steward-2
+  annotations:
+    fluxcd.io/automated: "false"
+  namespace: authority-ns
+spec:
+  releaseName: authority-authority-steward-2
+  chart:
+    path: platforms/hyperledger-indy/charts/indy-key-mgmt
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+  values:
+    metadata:
+      name: authority-authority-steward-2
+      namespace: authority-ns
+    network:
+      name: hrnd
+    image:
+      name: authority
+      repository: index.docker.io/hyperledgerlabs/indy-key-mgmt:1.11.0
+      pullSecret: regcred
+    vault:
+      address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com
+      keyPath: authority.stewards
+      identity: authority-steward-2
+      auth_path: kubernetes-authority-admin-auth
+    account:
+      service: authority-admin-vault-auth
+      role: rw
