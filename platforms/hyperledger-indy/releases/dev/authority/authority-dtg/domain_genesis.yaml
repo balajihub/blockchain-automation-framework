@@ -1,0 +1,24 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: authority-dtg
+  annotations:
+    fluxcd.io/automated: "false"
+  namespace: authority-ns
+spec:
+  releaseName: authority-dtg
+  chart:
+    path: platforms/hyperledger-indy/charts/indy-domain-genesis
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+  values:
+    metadata:
+      name: authority-dtg
+      namespace: authority-ns
+    organization:
+      name: authority
+    configmap:
+      domainGenesis: |-
+        {"reqSignature":{},"txn":{"data":{"alias":"authority-trustee","dest":"VYNjWrwJ6Jq7K9BgaQuGgZ","role":"0","verkey":"GZEfA6auDXvsjmWYQaVUdTQHzmiqa91pCPue9JXgppFC"},"metadata":{},"type":"1"},"txnMetadata":{"seqNo":1},"ver":"1"}
+        {"reqSignature":{},"txn":{"data":{"alias":"authority-steward-1","dest":"LTYUxVQpoozCn9CbRWuiLY","role":"2","verkey":"Bc6TppXRp9omz1cTneNAhYJqfc5LjXYJYZR6SzYaJeBP"},"metadata":{"from":"VYNjWrwJ6Jq7K9BgaQuGgZ"},"type":"1"},"txnMetadata":{"seqNo":2},"ver":"1"}
+        {"reqSignature":{},"txn":{"data":{"alias":"authority-steward-2","dest":"MxDWBEDCDH1DNJB7gaJcuE","role":"2","verkey":"CRLMsRYraSRrLSmVFV3a71gSZvqB9rpQBEK34GSefgMc"},"metadata":{"from":"VYNjWrwJ6Jq7K9BgaQuGgZ"},"type":"1"},"txnMetadata":{"seqNo":3},"ver":"1"}
