@@ -1,0 +1,36 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: authority-authority-steward-1-auth-job
+  annotations:
+    fluxcd.io/automated: "false"
+  namespace: authority-ns
+spec:
+  releaseName: authority-authority-steward-1-auth-job
+  chart:
+    path: platforms/hyperledger-indy/charts/indy-auth-job
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+  values:
+    metadata:
+      name: authority-authority-steward-1-auth-job
+      namespace: authority-ns
+    network:
+      name: hrnd
+      kubernetes_url: https://B617DF6E3F02141218F27D4B6B2ED16D.gr7.us-east-2.eks.amazonaws.com
+    image:
+      name: authority
+      repository: alpine:3.9.4
+    vault:
+      address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com
+      keyPath: authority.stewards
+      identity: authority-steward-1
+      admin_auth_path: kubernetes-authority-admin-auth
+      policy: authority-authority-steward-1-ro
+      policy_content: path \"/authority/stewards/authority-steward-1/*\" { capabilities = [ \"read\", \"list\" ] }
+      auth_path: kubernetes-authority-authority-steward-1-auth
+    account:
+      admin_service: authority-admin-vault-auth
+      admin_role: rw
+      service: authority-authority-steward-1-vault-auth
+      role: ro

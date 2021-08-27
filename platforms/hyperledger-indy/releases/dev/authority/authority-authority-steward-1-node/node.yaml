@@ -1,0 +1,101 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: authority-authority-steward-1-node
+  annotations:
+    fluxcd.io/automated: "false"
+  namespace: authority-ns
+spec:
+  releaseName: authority-authority-steward-1-node
+  chart:
+    path: platforms/hyperledger-indy/charts/indy-node
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+  values:
+    metadata:
+      name: authority-authority-steward-1-node
+      namespace: authority-ns
+    network:
+      name: hrnd
+    organization:
+      name: authority
+    genesis:
+      add_org: False
+    image:
+      pullSecret: regcred
+      initContainer:
+        name: authority-authority-steward-1-node-init
+        repository: alpine:3.9.4
+      cli:
+        name: authority-authority-steward-1-node-ledger-txn
+        repository: index.docker.io/hyperledgerlabs/indy-ledger-txn:latest
+        pullSecret: regcred  
+      indyNode:
+        name: authority-authority-steward-1-node
+        repository: index.docker.io/hyperledgerlabs/indy-node:1.11.0
+    node:
+      name: authority-steward-1
+      ip: 0.0.0.0
+      publicIp: 3.130.245.181
+      port: 9731
+      ambassadorPort: 9731
+    client:
+      publicIp: 3.130.245.181
+      ip: 0.0.0.0
+      port: 9732
+      ambassadorPort: 9732
+    service:
+      type: ClusterIP
+      ports:
+        nodePort: 9731
+        nodeTargetPort: 9731
+        clientPort: 9732
+        clientTargetPort: 9732
+    configmap:
+      indyConfig: |-
+        NETWORK_NAME = 'hrnd'
+        # Enable stdout logging
+        enableStdOutLogging = True
+        logRotationBackupCount = 10
+        # Directory to store ledger.
+        LEDGER_DIR = '/var/lib/indy/data'
+        # Directory to store logs.
+        LOG_DIR = '/var/log/indy'
+        # Directory to store keys.
+        KEYS_DIR = '/var/lib/indy/keys'
+        # Directory to store genesis transactions files.
+        GENESIS_DIR = '/var/lib/indy/genesis'
+        # Directory to store backups.
+        BACKUP_DIR = '/var/lib/indy/backup'
+        # Directory to store plugins.
+        PLUGINS_DIR = '/var/lib/indy/plugins'
+        # Directory to store node info.
+        NODE_INFO_DIR = '/var/lib/indy/data'
+    ambassador:
+      annotations: |-
+        ---
+        apiVersion: ambassador/v2
+        kind: TCPMapping
+        name: authority-authority-steward-1-node-node-mapping
+        port: 9731
+        service: authority-authority-steward-1-node.authority-ns:9731
+        ---
+        apiVersion: ambassador/v2
+        kind: TCPMapping
+        name: authority-authority-steward-1-node-client-mapping
+        port: 9732
+        service: authority-authority-steward-1-node.authority-ns:9732
+    vault:
+      address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com
+      serviceAccountName: authority-authority-steward-1-vault-auth
+      keyPath: /keys/hrnd/keys/authority-steward-1
+      authPath: kubernetes-authority-authority-steward-1-auth
+      nodeId: authority-steward-1
+      role: ro
+    storage:
+      data:
+        storagesize: 3Gi
+        storageClassName: authority-aws-storageclass
+      keys:
+        storagesize: 3Gi
+        storageClassName: authority-aws-storageclass
