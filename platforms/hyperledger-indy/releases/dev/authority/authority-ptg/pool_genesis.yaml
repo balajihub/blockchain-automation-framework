@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: authority-ptg
+  annotations:
+    fluxcd.io/automated: "false"
+  namespace: authority-ns
+spec:
+  releaseName: authority-ptg
+  chart:
+    path: platforms/hyperledger-indy/charts/indy-pool-genesis
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+  values:
+    metadata:
+      name: authority-ptg
+      namespace: authority-ns
+    organization:
+      name: authority
+    configmap:
+      poolGenesis: |-
+        {"reqSignature":{},"txn":{"data":{"data":{"alias":"authority-steward-1","blskey":"3Zx75PYQRubt334p4LfqzkmxyfuZuZYxJsYcbDY98xtxviLXxFbUXxhrGkYFJJi4sdkXaG4qayfna6HbxuEAizagmsXTKVAsAKtHPLRJEgtbJYGrUhQRjHBPQNwzjUswH63qUojyqdabmSg5fk811coba4WbyMnBwJUpPfcfkPDiJDe","blskey_pop":"RNBxkZyKFSdeznpcfBp92NE9ZVkaZ1E9S4XTYZCZFVAdcC2Hbgn9H9fmwsGGdkpozWAER97V9RZCohDFWvrXjL9Bh7FZKLcEubwbVXbumkyLMUD12mJ6AkqJy6wkV4w1ugwrMGp4UiD2E91VhmDFAneqaPqY6k1Ms84CZzezsiGEUf","client_ip":"3.130.245.181","client_port":9732,"node_ip":"3.130.245.181","node_port":9731,"services":["VALIDATOR"]},"dest":"Bc6TppXRp9omz1cTneNAhYJqfc5LjXYJYZR6SzYaJeBP"},"metadata":{"from":"LTYUxVQpoozCn9CbRWuiLY"},"type":"0"},"txnMetadata":{"seqNo":1,"txnId":"e1fc6a6b413834f18fdb836ac1c0eb3856b2290e285aee6d9d3a64770dc71378"},"ver":"1"}
+        {"reqSignature":{},"txn":{"data":{"data":{"alias":"authority-steward-2","blskey":"4X2FemqpAfnNvfdrdNH451CVQaoVayNjn75knATCrmzaBjKBESXaLiEUnAuszoeaqCX3zUeDR2haXH61YbV2cHFKsUVwcJYjQ8Cw2QYPtLbQfdtKLC8DvXcdsot7kj21VvBZxZQMB2mHcwPTJActriUrpfJ6VUdhHdNtbdBCB4NcFGh","blskey_pop":"QvNGRtyEHXS3uUCMEum4EhVGgjeqvaSZBak9752TU7JnVgGczr7yagPK5qxqZSh9W61iyT4u1sEMJsdn25oUDVBLysVH5AmJzPQaGpG8ZKh9g36NrZUmkR7Sb3ruk7ZebyD4AeWm15fzfc6i88FT9hHNnfKze7SaYYS1AHkzaNtXmh","client_ip":"3.130.245.181","client_port":9722,"node_ip":"3.130.245.181","node_port":9721,"services":["VALIDATOR"]},"dest":"CRLMsRYraSRrLSmVFV3a71gSZvqB9rpQBEK34GSefgMc"},"metadata":{"from":"MxDWBEDCDH1DNJB7gaJcuE"},"type":"0"},"txnMetadata":{"seqNo":2,"txnId":"ed5a58095c1821153633fd240b1ffc7b0dddb01888377038c5287c9001dc7ead"},"ver":"1"}
