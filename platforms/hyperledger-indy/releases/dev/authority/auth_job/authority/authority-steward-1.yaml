@@ -9,7 +9,7 @@ spec:
   releaseName: authority-authority-steward-1-auth-job
   chart:
     path: platforms/hyperledger-indy/charts/indy-auth-job
-    git: https://github.com/<username>/blockchain-automation-framework.git
+    git: https://github.com/balajihub/blockchain-automation-framework.git
     ref: main
   values:
     metadata:
