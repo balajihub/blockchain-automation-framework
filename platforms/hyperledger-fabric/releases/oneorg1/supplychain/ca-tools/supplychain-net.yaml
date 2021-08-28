@@ -1,0 +1,32 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: supplychain-net-ca-tools
+  namespace: supplychain-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: supplychain-net-ca-tools
+  chart:
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+    path: platforms/hyperledger-fabric/charts/catools
+  values:
+    metadata:
+      namespace: supplychain-net
+      name: ca-tools
+    annotations:  
+      service:
+        - example1: example2
+      pvc:
+      deployment:
+    replicaCount: 1
+
+    image:
+      repository: hyperledger/fabric-ca-tools
+      tag: 1.2.1
+      pullPolicy: IfNotPresent
+      
+    storage:
+      storageclassname: supplychainsc
+      storagesize: 512Mi
