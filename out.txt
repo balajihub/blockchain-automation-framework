@@ -35,12 +35,12 @@ TASK [Remove build directory] **************************************************
 task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/deploy-network.yaml:17
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
 <localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254 `" && echo ansible-tmp-1630256504.21-7357-131919727233254="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525 `" && echo ansible-tmp-1630256608.98-8308-114615207301525="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525 `" ) && sleep 0'
 Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
-<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmpvR3IAs TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/AnsiballZ_file.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/AnsiballZ_file.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/AnsiballZ_file.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-8302r4Nbqm/tmp0Ycyce TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256608.98-8308-114615207301525/ > /dev/null 2>&1 && sleep 0'
 changed: [localhost] => {
     "changed": true, 
     "diff": {
@@ -53,49 +53,15 @@ changed: [localhost] => {
             "path_content": {
                 "directories": [
                     "./build/crypto-config", 
-                    "./build/test", 
-                    "./build/channel-artifacts", 
                     "./build/crypto-config/ordererOrganizations", 
                     "./build/crypto-config/ordererOrganizations/supplychain-net", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/tlscacerts", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls"
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca"
                 ], 
                 "files": [
-                    "./build/generate-crypto-supplychain-orderer1.sh", 
-                    "./build/generate-crypto-supplychain-orderer2.sh", 
-                    "./build/generate-crypto-supplychain-orderer3.sh", 
-                    "./build/generate-crypto-supplychain.sh", 
-                    "./build/configtx.yaml", 
-                    "./build/configtxgen", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem", 
+                    "./build/supplychain-net.ca.cert", 
+                    "./build/vault-crypto-supplychain-net-ro.hcl", 
                     "./build/crypto-config/ordererOrganizations/supplychain-net/ca/supplychain-net-CA.key", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/ca-supplychain-net-fabrictest.hyperrnd.com-8443.pem", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/tlscacerts/ca-supplychain-net-fabrictest.hyperrnd.com-8443.pem", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/ca.crt", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/server.crt", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/ca.crt", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/server.crt", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/ca.crt", 
-                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/server.crt", 
-                    "./build/test/supplychain-net-ca.yaml", 
-                    "./build/test/supplychain-net-ca-tools.yaml", 
-                    "./build/test/supplychain-orderer1.yaml", 
-                    "./build/test/supplychain-orderer2.yaml", 
-                    "./build/test/supplychain-orderer3.yaml", 
-                    "./build/channel-artifacts/allchannel.tx.base64", 
-                    "./build/channel-artifacts/allchannelsupplychainMSPAnchor.tx.base64", 
-                    "./build/channel-artifacts/genesis.block.base64"
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem"
                 ]
             }, 
             "state": "directory"
@@ -146,12 +112,12 @@ TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledge
 task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:7
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
 <localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560 `" && echo ansible-tmp-1630256504.79-7382-166495160459560="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574 `" && echo ansible-tmp-1630256609.55-8333-32740238870574="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574 `" ) && sleep 0'
 Using module file /usr/lib/python2.7/site-packages/ansible/modules/clustering/k8s/k8s_info.py
-<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmpFl0j1a TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/AnsiballZ_k8s_info.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/AnsiballZ_k8s_info.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/AnsiballZ_k8s_info.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-8302r4Nbqm/tmpYYPRge TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574/AnsiballZ_k8s_info.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574/AnsiballZ_k8s_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574/AnsiballZ_k8s_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256609.55-8333-32740238870574/ > /dev/null 2>&1 && sleep 0'
 ok: [localhost] => {
     "changed": false, 
     "invocation": {
@@ -351,12 +317,12 @@ TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledge
 task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/git_push/tasks/main.yaml:3
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
 <localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270 `" && echo ansible-tmp-1630256506.18-7428-73736019942270="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347 `" && echo ansible-tmp-1630256610.91-8379-275582307859347="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347 `" ) && sleep 0'
 Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
-<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmps1dgPx TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/AnsiballZ_file.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/AnsiballZ_file.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/AnsiballZ_file.py && sleep 0'
-<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/ > /dev/null 2>&1 && sleep 0'
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-8302r4Nbqm/tmplJufiy TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256610.91-8379-275582307859347/ > /dev/null 2>&1 && sleep 0'
 ok: [localhost] => {
     "changed": false, 
     "diff": {
@@ -419,8 +385,8 @@ TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledge
 task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/git_push/tasks/main.yaml:35
 <localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
 <localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
-<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222 `" && echo ansible-tmp-1630256506.43-7451-126655538201222="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222 `" ) && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256611.15-8402-103680824318560 `" && echo ansible-tmp-1630256611.15-8402-103680824318560="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256611.15-8402-103680824318560 `" ) && sleep 0'
 Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
-<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmpV20Kd8 TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/AnsiballZ_command.py
-<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/AnsiballZ_command.py && sleep 0'
-<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/AnsiballZ_command.py && sleep 0'
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-8302r4Nbqm/tmpVL0A0O TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256611.15-8402-103680824318560/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256611.15-8402-103680824318560/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256611.15-8402-103680824318560/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256611.15-8402-103680824318560/AnsiballZ_command.py && sleep 0'
