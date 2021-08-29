@@ -47,4 +47,4 @@ spec:
     proxy:
       provider: haproxy
       type: orderer
-      external_url_suffix: org1ambassador.fabrictest.hyperrnd.com
+      external_url_suffix: fabrictest.hyperrnd.com
