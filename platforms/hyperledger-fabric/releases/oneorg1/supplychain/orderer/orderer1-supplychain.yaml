@@ -15,7 +15,7 @@ spec:
     metadata:
       namespace: supplychain-net
       images:
-        orderer: hyperledger/fabric-orderer:2.2.0
+        orderer: hyperledger/fabric-orderer:2.2.2
         alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
     annotations:  
       service:
@@ -52,7 +52,7 @@ spec:
 
     proxy:
       provider: haproxy
-      external_url_suffix: org1ambassador.fabrictest.hyperrnd.com
+      external_url_suffix: fabrictest.hyperrnd.com
 
     genesis: |-
       
