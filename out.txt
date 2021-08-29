@@ -1,0 +1,426 @@
+ansible-playbook 2.9.23
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/ec2-user/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.18 (default, Jun 10 2021, 00:11:02) [GCC 7.3.1 20180712 (Red Hat 7.3.1-13)]
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /home/ec2-user/fabric/hosts as it did not pass its verify_file() method
+script declined parsing /home/ec2-user/fabric/hosts as it did not pass its verify_file() method
+auto declined parsing /home/ec2-user/fabric/hosts as it did not pass its verify_file() method
+Parsed /home/ec2-user/fabric/hosts inventory source with ini plugin
+Skipping callback 'actionable', as we already have a stdout callback.
+Skipping callback 'counter_enabled', as we already have a stdout callback.
+Skipping callback 'debug', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'full_skip', as we already have a stdout callback.
+Skipping callback 'json', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'null', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Skipping callback 'selective', as we already have a stdout callback.
+Skipping callback 'skippy', as we already have a stdout callback.
+Skipping callback 'stderr', as we already have a stdout callback.
+Skipping callback 'unixy', as we already have a stdout callback.
+Skipping callback 'yaml', as we already have a stdout callback.
+
+PLAYBOOK: deploy-network.yaml **************************************************
+1 plays in platforms/hyperledger-fabric/configuration/deploy-network.yaml
+
+PLAY [ansible_provisioners] ****************************************************
+META: ran handlers
+
+TASK [Remove build directory] **************************************************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/deploy-network.yaml:17
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
+<localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254 `" && echo ansible-tmp-1630256504.21-7357-131919727233254="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmpvR3IAs TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.21-7357-131919727233254/ > /dev/null 2>&1 && sleep 0'
+changed: [localhost] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "./build", 
+            "state": "absent"
+        }, 
+        "before": {
+            "path": "./build", 
+            "path_content": {
+                "directories": [
+                    "./build/crypto-config", 
+                    "./build/test", 
+                    "./build/channel-artifacts", 
+                    "./build/crypto-config/ordererOrganizations", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/tlscacerts", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls"
+                ], 
+                "files": [
+                    "./build/generate-crypto-supplychain-orderer1.sh", 
+                    "./build/generate-crypto-supplychain-orderer2.sh", 
+                    "./build/generate-crypto-supplychain-orderer3.sh", 
+                    "./build/generate-crypto-supplychain.sh", 
+                    "./build/configtx.yaml", 
+                    "./build/configtxgen", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca/ca.supplychain-net-cert.pem", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/ca/supplychain-net-CA.key", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/admincerts/Admin@supplychain-net-cert.pem", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/cacerts/ca-supplychain-net-fabrictest.hyperrnd.com-8443.pem", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/msp/tlscacerts/ca-supplychain-net-fabrictest.hyperrnd.com-8443.pem", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/ca.crt", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer1.supplychain-net/tls/server.crt", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/ca.crt", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer2.supplychain-net/tls/server.crt", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/ca.crt", 
+                    "./build/crypto-config/ordererOrganizations/supplychain-net/orderers/orderer3.supplychain-net/tls/server.crt", 
+                    "./build/test/supplychain-net-ca.yaml", 
+                    "./build/test/supplychain-net-ca-tools.yaml", 
+                    "./build/test/supplychain-orderer1.yaml", 
+                    "./build/test/supplychain-orderer2.yaml", 
+                    "./build/test/supplychain-orderer3.yaml", 
+                    "./build/channel-artifacts/allchannel.tx.base64", 
+                    "./build/channel-artifacts/allchannelsupplychainMSPAnchor.tx.base64", 
+                    "./build/channel-artifacts/genesis.block.base64"
+                ]
+            }, 
+            "state": "directory"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": null, 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "directory_mode": null, 
+            "follow": true, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "owner": null, 
+            "path": "./build", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "absent", 
+            "unsafe_writes": null
+        }
+    }, 
+    "path": "./build", 
+    "state": "absent"
+}
+
+TASK [Create namespace and Vault auth for each organization] *******************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/deploy-network.yaml:23
+
+TASK [Checking if the namespace supplychain-net already exists] ****************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:6
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/check/k8_component : Check Namespace supplychain-net is created] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:7
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
+<localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560 `" && echo ansible-tmp-1630256504.79-7382-166495160459560="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/clustering/k8s/k8s_info.py
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmpFl0j1a TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/AnsiballZ_k8s_info.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/AnsiballZ_k8s_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/AnsiballZ_k8s_info.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256504.79-7382-166495160459560/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "api_key": null, 
+            "api_version": "v1", 
+            "ca_cert": null, 
+            "client_cert": null, 
+            "client_key": null, 
+            "context": "bji-fabric-5-eks.us-east-2.eksctl.io", 
+            "field_selectors": [], 
+            "host": null, 
+            "kind": "Namespace", 
+            "kubeconfig": "/home/ec2-user/.kube/config", 
+            "label_selectors": [], 
+            "name": "supplychain-net", 
+            "namespace": null, 
+            "password": null, 
+            "proxy": null, 
+            "username": null, 
+            "validate_certs": null
+        }
+    }, 
+    "resources": [
+        {
+            "apiVersion": "v1", 
+            "kind": "Namespace", 
+            "metadata": {
+                "annotations": {
+                    "fluxcd.io/sync-checksum": "3e3781467b99451b319066d41d04f59361cb913c", 
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{\"fluxcd.io/sync-checksum\":\"3e3781467b99451b319066d41d04f59361cb913c\"},\"labels\":{\"fluxcd.io/sync-gc-mark\":\"sha256.zuE59i6rc3b2f6HkFX0mZMLJp7_lZTtTKgrl49lBDZI\"},\"name\":\"supplychain-net\"}}\n"
+                }, 
+                "creationTimestamp": "2021-08-28T18:58:24Z", 
+                "labels": {
+                    "fluxcd.io/sync-gc-mark": "sha256.zuE59i6rc3b2f6HkFX0mZMLJp7_lZTtTKgrl49lBDZI"
+                }, 
+                "managedFields": [
+                    {
+                        "apiVersion": "v1", 
+                        "fieldsType": "FieldsV1", 
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {}, 
+                                    "f:fluxcd.io/sync-checksum": {}, 
+                                    "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                                }, 
+                                "f:labels": {
+                                    ".": {}, 
+                                    "f:fluxcd.io/sync-gc-mark": {}
+                                }
+                            }, 
+                            "f:status": {
+                                "f:phase": {}
+                            }
+                        }, 
+                        "manager": "kubectl", 
+                        "operation": "Update", 
+                        "time": "2021-08-28T18:58:24Z"
+                    }
+                ], 
+                "name": "supplychain-net", 
+                "resourceVersion": "568955", 
+                "selfLink": "/api/v1/namespaces/supplychain-net", 
+                "uid": "fea7220e-8673-4e72-b4f1-081d4e4e5b11"
+            }, 
+            "spec": {
+                "finalizers": [
+                    "kubernetes"
+                ]
+            }, 
+            "status": {
+                "phase": "Active"
+            }
+        }
+    ]
+}
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/check/k8_component : Wait for Namespace supplychain-net] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:17
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/check/k8_component : Wait for Namespace supplychain-net] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:32
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/check/k8_component : Wait for Namespace supplychain-net] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:45
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [create/namespace_vaultauth : Set Variable] *******************************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:17
+ok: [localhost] => {
+    "ansible_facts": {
+        "get_namespace": {
+            "changed": false, 
+            "failed": false, 
+            "resources": [
+                {
+                    "apiVersion": "v1", 
+                    "kind": "Namespace", 
+                    "metadata": {
+                        "annotations": {
+                            "fluxcd.io/sync-checksum": "3e3781467b99451b319066d41d04f59361cb913c", 
+                            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{\"fluxcd.io/sync-checksum\":\"3e3781467b99451b319066d41d04f59361cb913c\"},\"labels\":{\"fluxcd.io/sync-gc-mark\":\"sha256.zuE59i6rc3b2f6HkFX0mZMLJp7_lZTtTKgrl49lBDZI\"},\"name\":\"supplychain-net\"}}\n"
+                        }, 
+                        "creationTimestamp": "2021-08-28T18:58:24Z", 
+                        "labels": {
+                            "fluxcd.io/sync-gc-mark": "sha256.zuE59i6rc3b2f6HkFX0mZMLJp7_lZTtTKgrl49lBDZI"
+                        }, 
+                        "managedFields": [
+                            {
+                                "apiVersion": "v1", 
+                                "fieldsType": "FieldsV1", 
+                                "fieldsV1": {
+                                    "f:metadata": {
+                                        "f:annotations": {
+                                            ".": {}, 
+                                            "f:fluxcd.io/sync-checksum": {}, 
+                                            "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                                        }, 
+                                        "f:labels": {
+                                            ".": {}, 
+                                            "f:fluxcd.io/sync-gc-mark": {}
+                                        }
+                                    }, 
+                                    "f:status": {
+                                        "f:phase": {}
+                                    }
+                                }, 
+                                "manager": "kubectl", 
+                                "operation": "Update", 
+                                "time": "2021-08-28T18:58:24Z"
+                            }
+                        ], 
+                        "name": "supplychain-net", 
+                        "resourceVersion": "568955", 
+                        "selfLink": "/api/v1/namespaces/supplychain-net", 
+                        "uid": "fea7220e-8673-4e72-b4f1-081d4e4e5b11"
+                    }, 
+                    "spec": {
+                        "finalizers": [
+                            "kubernetes"
+                        ]
+                    }, 
+                    "status": {
+                        "phase": "Active"
+                    }
+                }
+            ]
+        }
+    }, 
+    "changed": false
+}
+
+TASK [Create namespaces] *******************************************************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:24
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [Create vault reviewer service account for Organizations] *****************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:38
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [Create vault auth service account for Organizations] *********************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:52
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [Create clusterrolebinding for Ordrers] ***********************************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:66
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [Git Push] ****************************************************************
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/roles/create/namespace_vaultauth/tasks/main.yaml:74
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : Check if directory: /home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../../ exists] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/git_push/tasks/main.yaml:3
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
+<localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270 `" && echo ansible-tmp-1630256506.18-7428-73736019942270="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmps1dgPx TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.18-7428-73736019942270/ > /dev/null 2>&1 && sleep 0'
+ok: [localhost] => {
+    "changed": false, 
+    "diff": {
+        "after": {
+            "path": "/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../../"
+        }, 
+        "before": {
+            "path": "/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../../"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "ec2-user", 
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null, 
+            "_original_basename": null, 
+            "access_time": null, 
+            "access_time_format": "%Y%m%d%H%M.%S", 
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "directory_mode": null, 
+            "follow": true, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "modification_time": null, 
+            "modification_time_format": "%Y%m%d%H%M.%S", 
+            "owner": null, 
+            "path": "/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../../", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null
+        }
+    }, 
+    "mode": "0775", 
+    "owner": "ec2-user", 
+    "path": "/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../../", 
+    "size": 4096, 
+    "state": "directory", 
+    "uid": 1000
+}
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : Execute git push for ssh] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/git_push/tasks/main.yaml:9
+skipping: [localhost] => {
+    "changed": false, 
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [/home/ec2-user/fabric/blockchain-automation-framework/platforms/hyperledger-fabric/configuration/../../shared/configuration/roles/git_push : Execute git push for https] ***
+task path: /home/ec2-user/fabric/blockchain-automation-framework/platforms/shared/configuration/roles/git_push/tasks/main.yaml:35
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: ec2-user
+<localhost> EXEC /bin/sh -c 'echo ~ec2-user && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/ec2-user/.ansible/tmp `"&& mkdir "` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222 `" && echo ansible-tmp-1630256506.43-7451-126655538201222="` echo /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222 `" ) && sleep 0'
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/commands/command.py
+<localhost> PUT /home/ec2-user/.ansible/tmp/ansible-local-7351xKosHo/tmpV20Kd8 TO /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/AnsiballZ_command.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/ /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/AnsiballZ_command.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/home/ec2-user/mypython3env/venv/bin/python3 /home/ec2-user/.ansible/tmp/ansible-tmp-1630256506.43-7451-126655538201222/AnsiballZ_command.py && sleep 0'
