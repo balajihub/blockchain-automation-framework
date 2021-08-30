@@ -48,5 +48,5 @@ spec:
         git_username: "balajihub"
         url: github.com/balajihub/blockchain-automation-framework.git
         branch: main
-        path: chaincode_src
+        path: examples/supplychain-app/fabric/chaincode_rest_server/chaincode/supplychain/cmd
       endorsementpolicies:  ''
