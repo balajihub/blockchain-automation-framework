@@ -39,14 +39,14 @@ spec:
       address: orderer3.supplychain-net:7050
     chaincode:
       builder: hyperledger/fabric-ccenv:2.2.2
-      name: hyperrand1
+      name: hyperrand2
       version: 1.0
       lang: golang
-      maindirectory: hyperrandmain1
+      maindirectory: hyperrandmain2
       repository:
         hostname: "github.com"
         git_username: "balajihub"
         url: github.com/balajihub/blockchain-automation-framework.git
         branch: main
-        path: examples/supplychain-app/fabric/chaincode_rest_server/chaincode/supplychain/cmd
+        path: examples/supplychain-app/fabric/chaincode_rest_server/chaincode
       endorsementpolicies:  ''
