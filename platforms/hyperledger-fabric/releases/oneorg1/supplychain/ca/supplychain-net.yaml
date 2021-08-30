@@ -12,30 +12,31 @@ spec:
     ref: main
     path: platforms/hyperledger-fabric/charts/ca    
   values:
+    metadata:
+      namespace: supplychain-net
+      images:
+        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+        ca: hyperledger/fabric-ca:1.4.8
     deployment:
       annotations:
     annotations:  
       service:
         - example1: example2
       pvc:
-    metadata:
-      namespace: supplychain-net
-      images:
-        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
-        ca: hyperledger/fabric-ca:1.4.8
+       
     server:
       name: ca
       tlsstatus: true
       admin: supplychain-admin
     storage:
       storageclassname: supplychainsc
-      storagesize: 512Mi 
+      storagesize: 512Mi
     vault:
       role: vault-role
       address: http://acab3c720472246519b96cb01adcfe82-1250505999.us-east-2.elb.amazonaws.com
       authpath: dev2supplychain-net-auth
-      secretcert: secret/crypto/ordererOrganizations/supplychain-net/ca?ca.supplychain-net-cert.pem
-      secretkey: secret/crypto/ordererOrganizations/supplychain-net/ca?supplychain-net-CA.key
+      secretcert: secret/crypto/peerOrganizations/supplychain-net/ca?ca.supplychain-net-cert.pem
+      secretkey: secret/crypto/peerOrganizations/supplychain-net/ca?supplychain-net-CA.key
       secretadminpass: secret/credentials/supplychain-net/ca/supplychain?user
       serviceaccountname: vault-auth
       imagesecretname: regcred
@@ -46,5 +47,5 @@ spec:
           port: 7054
     proxy:
       provider: haproxy
-      type: orderer
+      type: peer
       external_url_suffix: fabrictest.hyperrnd.com
