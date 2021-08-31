@@ -40,11 +40,11 @@ spec:
     orderer:
       address: orderer1.supplychain-net:7050
     channeltx: |-
-      Cq0DChgKFggCGgYIyuq4iQYiCmFsbGNoYW5uZWwSkAMKjQMKCmFsbGNoYW5uZWwSMBIeCgtBcHBs
+      Cq0DChgKFggCGgYI+9W5iQYiCmFsbGNoYW5uZWwSkAMKjQMKCmFsbGNoYW5uZWwSMBIeCgtBcHBs
       aWNhdGlvbhIPEg0KCW15cGVlck1TUBIAGg4KCkNvbnNvcnRpdW0SABrMAhKgAgoLQXBwbGljYXRp
       b24SkAIIARINCglteXBlZXJNU1ASABokCgxDYXBhYmlsaXRpZXMSFBIKCggKBFYyXzASABoGQWRt
-      aW5zIjUKFExpZmVjeWNsZUVuZG9yc2VtZW50Eh0SEwgDEg8KC0VuZG9yc2VtZW50EAIaBkFkbWlu
-      cyIiCgdSZWFkZXJzEhcSDQgDEgkKB1JlYWRlcnMaBkFkbWlucyIiCgdXcml0ZXJzEhcSDQgDEgkK
-      B1dyaXRlcnMaBkFkbWlucyIiCgZBZG1pbnMSGBIOCAMSCgoGQWRtaW5zEAIaBkFkbWlucyIsCgtF
-      bmRvcnNlbWVudBIdEhMIAxIPCgtFbmRvcnNlbWVudBACGgZBZG1pbnMqBkFkbWlucxonCgpDb25z
+      aW5zIiwKC0VuZG9yc2VtZW50Eh0SEwgDEg8KC0VuZG9yc2VtZW50EAIaBkFkbWlucyI1ChRMaWZl
+      Y3ljbGVFbmRvcnNlbWVudBIdEhMIAxIPCgtFbmRvcnNlbWVudBACGgZBZG1pbnMiIgoHUmVhZGVy
+      cxIXEg0IAxIJCgdSZWFkZXJzGgZBZG1pbnMiIgoHV3JpdGVycxIXEg0IAxIJCgdXcml0ZXJzGgZB
+      ZG1pbnMiIgoGQWRtaW5zEhgSDggDEgoKBkFkbWlucxACGgZBZG1pbnMqBkFkbWlucxonCgpDb25z
       b3J0aXVtEhkSFwoVU3VwcGx5Q2hhaW5Db25zb3J0aXVt
