@@ -1,0 +1,32 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mypeer-net-ca-tools
+  namespace: mypeer-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: mypeer-net-ca-tools
+  chart:
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+    path: platforms/hyperledger-fabric/charts/catools
+  values:
+    metadata:
+      namespace: mypeer-net
+      name: ca-tools
+    annotations:  
+      service:
+        - example1: example2
+      pvc:
+      deployment:
+    replicaCount: 1
+
+    image:
+      repository: hyperledger/fabric-ca-tools
+      tag: 1.2.1
+      pullPolicy: IfNotPresent
+      
+    storage:
+      storageclassname: mypeersc
+      storagesize: 512Mi
