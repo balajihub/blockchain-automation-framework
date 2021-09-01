@@ -1,0 +1,48 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: anchorpeer-allchannel-mypeer
+  namespace: mypeer-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: anchorpeer-allchannel-mypeer
+  chart:
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+    path: platforms/hyperledger-fabric/charts/anchorpeer
+  values:
+    metadata:
+      namespace: mypeer-net
+      images:
+        fabrictools: hyperledger/fabric-tools:2.2.2
+        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+
+    peer:
+      name: peer0
+      address: peer0.mypeer-net:7051
+      localmspid: mypeerMSP
+      loglevel: debug
+      tlsstatus: true
+
+    vault:
+      role: vault-role
+      address: http://a88bd27b6a15f42719b202bdfecef92c-869201622.us-east-2.elb.amazonaws.com
+      authpath: dev2mypeer-net-auth
+      adminsecretprefix: secret/crypto/peerOrganizations/mypeer-net/users/admin
+      orderersecretprefix: secret/crypto/peerOrganizations/mypeer-net/orderer
+      serviceaccountname: vault-auth
+      imagesecretname: regcred
+
+    channel:
+      name: allchannel      
+    orderer:
+      address: orderer1.supplychain-net:7050
+    anchorstx: |-
+      Cs0CChgKFggCGgYIx8i/iQYiCmFsbGNoYW5uZWwSsAIKrQIKCmFsbGNoYW5uZWwSYhJgCgtBcHBs
+      aWNhdGlvbhJRCAESTQoJbXlwZWVyTVNQEkAaBwoDTVNQEgAiDwoLRW5kb3JzZW1lbnQSACILCgdS
+      ZWFkZXJzEgAiCwoHV3JpdGVycxIAIgoKBkFkbWlucxIAGroBErcBCgtBcHBsaWNhdGlvbhKnAQgB
+      EqIBCglteXBlZXJNU1ASlAEIARpICgtBbmNob3JQZWVycxI5Ei8KLQoocGVlcjAubXlwZWVyLW5l
+      dC5mYWJyaWN0ZXN0Lmh5cGVycm5kLmNvbRD7QRoGQWRtaW5zGgcKA01TUBIAIgoKBkFkbWlucxIA
+      Ig8KC0VuZG9yc2VtZW50EgAiCwoHUmVhZGVycxIAIgsKB1dyaXRlcnMSACoGQWRtaW5z
+
