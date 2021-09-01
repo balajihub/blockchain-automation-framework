@@ -1,0 +1,51 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: invoke-mypeer-allchannel-supplychain1.1
+  namespace: mypeer-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: invoke-mypeer-allchannel-supplychain1.1
+  chart:
+    git: https://github.com/balajihub/blockchain-automation-framework.git
+    ref: main
+    path: platforms/hyperledger-fabric/charts/invoke_chaincode
+  values:
+    metadata:
+      namespace: mypeer-net
+      network:
+        version: 2.2.2
+      add_organization: false
+      images:
+        fabrictools: hyperledger/fabric-tools:2.2.2
+        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+    peer:
+      name: peer0
+      address: peer0.mypeer-net:7051
+      localmspid: mypeerMSP
+      loglevel: debug
+      tlsstatus: true
+    vault:
+      role: vault-role
+      address: http://a88bd27b6a15f42719b202bdfecef92c-869201622.us-east-2.elb.amazonaws.com
+      authpath: dev2mypeer-net-auth
+      adminsecretprefix: secret/crypto/peerOrganizations/mypeer-net/users/admin 
+      orderersecretprefix: secret/crypto/peerOrganizations/mypeer-net/orderer
+      serviceaccountname: vault-auth
+      imagesecretname: regcred
+      tls: false
+    orderer:
+      address: orderer1.supplychain-net:7050
+    chaincode:
+      builder: hyperledger/fabric-ccenv:2.2.2
+      name: supplychain
+      version: 1.1
+      invokearguments: ''
+      endorsementpolicies:  ''
+    channel:
+      name: allchannel
+    endorsers:
+        creator: mypeer-net
+        name:  mypeer  
+        corepeeraddress:  peer0.mypeer-net:7051 
